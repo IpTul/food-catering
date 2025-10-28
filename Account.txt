@@ -1,0 +1,11 @@
+Akun Gmail dan midtrans
+user : katering.rosyanti@gmail.com
+pass : @Katering0102
+
+Akun customer
+user : test@gmail.com
+pass : test1234
+
+Akun admin
+user : admin@no-reply.com
+pass : Admin123321
