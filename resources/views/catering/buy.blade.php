@@ -123,7 +123,12 @@
     const ingredientQuantityInputs = document.querySelectorAll('.ingredient-quantity');
     const ingredientPriceElements = document.querySelectorAll('.ingredient-price');
 
+    const cusNamaInput = document.getElementById('cus_nama');
     const phoneInput = document.getElementById('no_hp');
+
+    cusNamaInput.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/[0-9]/g, '');
+    });
 
     phoneInput.addEventListener('input', function(e) {
       let value = e.target.value.replace(/\D/g, '');
