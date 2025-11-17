@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('profiles', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->id();
             $table->string('nama_barang');
-            $table->string('address');
-            $table->string('tgl_pemasukan');
+            $table->integer('jumlah_barang');
+            $table->string('unit_barang');
+            $table->text('deskripsi_barang')->nullable();
+            $table->date('tgl_pemasukan_barang');
+            $table->date('tgl_kadaluwarsa_barang')->nullable();
             $table->timestamps();
         });
     }
