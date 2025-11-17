@@ -15,7 +15,7 @@
             alt="{{ $recipe->name }}">
           <div class="card-details">
             <h1>{{ $recipe->name }}</h1>
-            <p>{{ $recipe->price ?? 'No Price' }} Rp</p>
+            <p>Rp {{ $recipe->price ?? 'No Price' }}</p>
             <label>{{ $recipe->stok }}</label>
           </div>
         </div>

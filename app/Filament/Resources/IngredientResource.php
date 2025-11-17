@@ -33,8 +33,8 @@ class IngredientResource extends Resource
                 Forms\Components\TextInput::make('price')
                 ->label('Harga')
                 ->required(),
-                Forms\Components\TextInput::make('quantity')
-                ->required(),
+                // Forms\Components\TextInput::make('quantity')
+                // ->required(),
                 Forms\Components\FileUpload::make('photo')
                 ->image()
                 ->disk('public')

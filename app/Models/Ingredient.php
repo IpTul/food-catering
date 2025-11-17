@@ -16,7 +16,7 @@ class Ingredient extends Model
         'name',
         'photo',
         'price',
-        'quantity',
+        // 'quantity',
         'stok',
     ];
 

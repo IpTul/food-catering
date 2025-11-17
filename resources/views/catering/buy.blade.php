@@ -78,11 +78,11 @@
       <div class="subtotal-row">
         <div class="subtotal-column">
           <h3>Quantity Items</h3>
-          <h3 id="subtotal-quantity-items">1</h3> {{-- Total Quantity ini diambil dari ingredients --}}
+          <h3 id="subtotal-quantity-items">1</h3>
         </div>
         <div class="subtotal-column">
           <h3>Quantity Ingredients</h3>
-          <h3 id="subtotal-quantity-ingredients">0</h3> {{-- Total Quantity ini diambil dari item --}}
+          <h3 id="subtotal-quantity-ingredients">0</h3>
         </div>
         <div class="subtotal-column">
           <h3>Total Price</h3>
@@ -100,6 +100,7 @@
         <div class="form-input-customer">
           <label>No HP</label>
           <input type="text" id="no_hp">
+          <small style="color: red; font-size: 12px;">* Nomor ini akan dihubungin jika terjadi masalah</small>
         </div>
         <div class="form-input-customer">
           <label>Alamat</label>
@@ -121,6 +122,27 @@
 
     const ingredientQuantityInputs = document.querySelectorAll('.ingredient-quantity');
     const ingredientPriceElements = document.querySelectorAll('.ingredient-price');
+
+    const phoneInput = document.getElementById('no_hp');
+
+    phoneInput.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 13) {
+        value = value.substring(0, 13);
+      }
+
+      let formatted = '';
+      if (value.length > 0) {
+        formatted = value.substring(0, 4);
+        if (value.length > 4) {
+          formatted += '-' + value.substring(4, 8);
+        }
+        if (value.length > 8) {
+          formatted += '-' + value.substring(8);
+        }
+      }
+      e.target.value = formatted;
+    });
 
     function updateSubtotal() {
       let itemQuantity = parseInt(quantityInput.value);
@@ -226,7 +248,7 @@
     // const noHp = document.querySelector('input[type="text"]:nth-of-type(1)').value;
     // const alamat = document.querySelector('input[type="text"]:nth-of-type(2)').value;
     const cus_nama = document.getElementById('cus_nama').value;
-    const noHp = document.getElementById('no_hp').value;
+    const noHp = document.getElementById('no_hp').value.replace(/\D/g, '');
     const alamat = document.getElementById('alamat').value;
 
     const customer = {
